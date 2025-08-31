@@ -1,11 +1,6 @@
 # enhanced_calculator.py 
 # CCCS 106 - Week 2 Lab Exercises (Optional)
-# Enhanced calculator GUI
-
-# hello_flet.py
-# CCCS 106 - Week 2 Lab Exercise
-# First Flet GUI Application
-# Student: [Your Name]
+# Enhanced calculator GUI based from hello_flet.py source code
 
 import flet as ft
 

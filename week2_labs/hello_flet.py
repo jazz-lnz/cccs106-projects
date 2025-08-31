@@ -1,7 +1,7 @@
 # hello_flet.py
 # CCCS 106 - Week 2 Lab Exercise
 # First Flet GUI Application
-# Student: [Your Name]
+# Student: Jessica Mae T. Lanuzo
 
 import flet as ft
 from datetime import datetime
@@ -75,12 +75,11 @@ def main(page: ft.Page):
                 ft.TextButton("Close", on_click=lambda e: close_dialog(dialog))
             ]
         )
-        page.dialog = dialog
-        dialog.open = True
+        page.open(dialog) # Flet's newer dialog API'; recommended method 
         page.update()
     
     def close_dialog(dialog):
-        dialog.open = False
+        page.close(dialog) # Flet's newer dialog API'; recommended method 
         page.update()
     
     # Buttons with styling

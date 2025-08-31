@@ -4,6 +4,7 @@
 
 import flet as ft
 from datetime import datetime
+import re # for input validation
 
 def main(page: ft.Page):
     # Page configuration
@@ -77,11 +78,41 @@ def main(page: ft.Page):
     # Functions
     def generate_profile(e):
         try:
-            # Validate inputs
+            # Check required inputs
             if not all([first_name.value, last_name.value, age.value]):
                 show_error("Please fill in all required fields (Name and Age)!")
                 return
             
+            # Validate name input
+            name_pattern = re.compile(r"^[A-Za-z\s'-]+$")
+            if not name_pattern.match(first_name.value) or not name_pattern.match(last_name.value):
+                show_error("Names must contain only letters, spaces, hyphens, or apostrophes.")
+                return
+            
+            # Validate age/student ID input
+            if not age.value.isdigit():
+                show_error("Age must be a whole number (no letters or symbols).")
+                return
+            if student_id.value and not student_id.value.isdigit():
+                show_error("Student ID must be a whole number (no letters or symbols).")
+                return
+            if student_id.value and int(student_id.value) <= 0:
+                show_error("Student ID must be greater than zero.")
+                return
+
+            age_int = int(age.value)
+            if age_int <= 0:
+                show_error("Age must be greater than zero.")
+                return
+            if age_int > 120:
+                show_error("Please enter a realistic age (less than 120).")
+                return
+            
+            # Validate hobbies input
+            if hobbies.value and not name_pattern.match(hobbies.value):
+                show_error("Hobbies must contain only letters, spaces, hyphens, or apostrophes.")
+                return
+
             # Calculate birth year
             current_year = datetime.now().year
             birth_year = current_year - int(age.value)
@@ -131,12 +162,11 @@ def main(page: ft.Page):
             content=ft.Text(message),
             actions=[ft.TextButton("OK", on_click=lambda e: close_error_dialog(error_dialog))]
         )
-        page.dialog = error_dialog
-        error_dialog.open = True
+        page.open(error_dialog) # Flet's newer dialog API'; recommended method 
         page.update()
     
     def close_error_dialog(dialog):
-        dialog.open = False
+        page.close(dialog) # Flet's newer dialog API'; recommended method 
         page.update()
     
     # Buttons
