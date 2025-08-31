@@ -66,23 +66,23 @@ For the calculator, I also needed to add error handling to the source code. This
 ## Screenshots
 <div style="text-align: center;">
 
-![Alt text](lab1_screenshots\environment_setup.png "Exercise 1.1: Python Installation and Virtual Environment Setup")
+![Alt text](lab1_screenshots/environment_setup.png "Exercise 1.1: Python Installation and Virtual Environment Setup")
 
 Activated environment and list of packages
 <br /><br />
 
-![Alt text](lab1_screenshots\vscode_setup.png "Exercise 1.2: Visual Studio Code Setup")
+![Alt text](lab1_screenshots/vscode_setup.png "Exercise 1.2: Visual Studio Code Setup")
 
 Installed Python extension and active interpreter (from created environment)
 <br /><br />
 
 
-![Alt text](lab1_screenshots\hello_world_output.png "Exercise 1.3: First Python Programs (Hello World!)")
+![Alt text](lab1_screenshots/hello_world_output.png "Exercise 1.3: First Python Programs (Hello World!)")
 
 Output of Hello World! program
 <br /><br />
 
-![Alt text](lab1_screenshots\basic_calculator_output.png "Exercise 1.3: First Python Programs (Basic Calculator)")
+![Alt text](lab1_screenshots/basic_calculator_output.png "Exercise 1.3: First Python Programs (Basic Calculator)")
 
 Output of calculator program
 
