@@ -3,14 +3,14 @@
 **Student Name:** Jessica Mae T. Lanuzo
 **Student ID:** 231001081
 **Section:** A
-**Date:** August 31, 2025
+**Date:** September 3, 2025
 
 ## Git Configuration
 
 ### Repository Setup
 - **GitHub Repository:** https://github.com/jazz-lnz/cccs106-projects.git
 - **Local Repository:** ✅ Initialized and connected
-- **Commit History:** 10 commits with descriptive messages (after final commit fow week 2; by the time this report is committed)
+- **Commit History:** 12 commits with descriptive messages (by the time this report is committed)
 
 ### Git Skills Demonstrated
 - ✅ Repository initialization and configuration
@@ -29,13 +29,13 @@
 ### 2. personal_info_gui.py
 - **Status:** ✅ Completed
 - **Features:** Form inputs, dropdowns, radio buttons, profile generation
-- **UI Components:** TextField, Dropdown, RadioGroup, Containers, Scrolling, di
+- **UI Components:** TextField, Dropdown, RadioGroup, Containers, Scrolling, Dialog
 - **Error Handling:** Input validation and user feedback
 - **Notes:** Same with hello_flet.py. Does not run on VSCode, but runs fine on system terminal. Birth year is also computed based only on the age input and current year; may be off by 1 year.
 
 ### 3. enhanced_calculator.py
 - **Status:** 🔄 In progress 
-- **Features:** Arithmetic operations, square roots and exponents, comparison, error handling
+- **Features:** Arithmetic operations, square roots and exponents, comparison
 - **UI Components:** Text, TextField, Button
 - **Error Handling:** Input validation and user feedback
 - **Notes:** Prototype for enhanced calculator GUI
@@ -56,13 +56,9 @@
 
 ## Challenges and Solutions
 
-1. **Mistakenly committed ZIP file during Week 1 push**
-    - *Challenge:* Accidentally included `week1_labs_lanuzo.zip` in the repository during initial commit.
-    - *Solution:* Removed the ZIP file in a cleanup commit. Later verified its removal and committed again to ensure full exclusion from local and remote branches.
-
-1. **Cleanup Commit Conflict**
-    - *Challenge:* Because of unawareness of proper Git practices, deleted a ZIP file (`week1_labs_lanuzo.zip`) locally without removing it from Git’s tracking. This led to confusion when the file remained in the repository history and appeared on GitHub after pushing.
-    - *Solution:* Used `git rm` to properly untrack the file and did a cleanup commit. Verified its removal and committed again.
+1. **Mistakenly committed ZIP file during Week 1 push, Encountered Cleanup Commit Issue**
+    - *Challenge:* Accidentally included `week1_labs_lanuzo.zip` in the repository during initial commit. Deleted the ZIP file locally and pushed the change to GitHub, but the file reappeard in the remote repository.
+    - *Solution:* Instead of resolving the mismatch through pulling and then pushing, the file was just deleted directly from GitHub's web interface. This resulted in the two commits reflecting the deletion of the same file. 
 
 1. **Git Branching Conflict due to Divergence of Remote and Local Main**
     - *Challenge:* Encountered a push rejection when trying to merge feature branch to `main`. Git flagged that the local `main` branch had diverged from the remote `main`, preventing a clean merge of the feature branch.
