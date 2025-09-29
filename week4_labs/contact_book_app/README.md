@@ -1,6 +1,28 @@
 # ContactBookApp app
 
+### Functions:
+- Add, edit, and delete contacts
+- View and search contacts by name in real-time
+- Toggle between light and dark mode
+
+### Features:
+- Collapsible Add Contact' section for wider view of contact list
+- Input validation to prevent nameless contacts
+- Card-based UI with icons for contact details
+- Confirmation dialog before deleting a contact
+
+## How It Works
+- Contacts are stored and managed in `contacts.db` using SQLite.
+- UI is built with Flet’s `reactive components` (TextField, ListView, Card, etc.).
+- Theme toggling is handled via `FloatingActionButton` and `page.theme_mode`.
+- Search field filters contacts using SQL `LIKE` clause.
+
+
 ## Run the app
+
+Requirements:
+- Python 3.10+
+- Flet (pip install flet)
 
 ### uv
 

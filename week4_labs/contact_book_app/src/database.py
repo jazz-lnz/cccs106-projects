@@ -19,23 +19,30 @@ def add_contact_db(conn, name, phone, email):
     """Adds a new contact to the database.""" 
     cursor = conn.cursor() 
     cursor.execute( 
-    "INSERT INTO contacts (name, phone, email) VALUES (?, ?, ?)", 
-    (name, phone, email) 
+        "INSERT INTO contacts (name, phone, email) VALUES (?, ?, ?)", 
+        (name, phone, email) 
     ) 
     conn.commit() 
 
-def get_all_contacts_db(conn): 
-    """Retrieves all contacts from the database.""" 
+def get_all_contacts_db(conn, search_input): 
+    """Returns contacts that match the search input (name).
+    If there is no search input, retrieves all contacts from the database.""" 
     cursor = conn.cursor() 
-    cursor.execute("SELECT id, name, phone, email FROM contacts") 
+    if search_input:
+        cursor.execute(
+            "SELECT id, name, phone, email FROM contacts WHERE name LIKE ?", 
+            (f"%{search_input}%",) # comma to make search input a single-element tuple
+        )
+    else:
+        cursor.execute("SELECT id, name, phone, email FROM contacts") 
     return cursor.fetchall() 
 
 def update_contact_db(conn, contact_id, name, phone, email): 
     """Updates an existing contact in the database.""" 
     cursor = conn.cursor() 
     cursor.execute( 
-    "UPDATE contacts SET name = ?, phone = ?, email = ? WHERE id = ?", 
-    (name, phone, email, contact_id) 
+        "UPDATE contacts SET name = ?, phone = ?, email = ? WHERE id = ?", 
+        (name, phone, email, contact_id) 
     ) 
     conn.commit() 
     
