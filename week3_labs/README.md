@@ -1,6 +1,31 @@
 # Userlogin app
 
+### Functions:
+- Authenticate users against a MySQL database
+- Validate input fields before login attempt
+- Display feedback dialogs for success, failure, or input errors
+
+### Features:
+- Frameless and centered login window following specified styling
+- Input fields for username and password with icons and helper text
+- Password field supporting hiding and revealing input
+- Alert dialogs for login success, failure, input errors, and database issues
+
+## How It Works
+- User credentials are stored in a `MySQL database` (fletapp) under the users table.
+- UI is built using `Flet’s reactive components` (TextField, ElevatedButton, Dialog, etc.).
+- Login logic is handled via an asynchronous `login_click` function. 
+*(asynchronous: UI stays responsive while waiting for login results)*
+- `Input validation` checks for empty fields before querying the database.
+- Authentication uses `parameterized SQL queries` to prevent injection.
+- Feedback is provided through styled `AlertDialog` components based on login outcome.
+
+
 ## Run the app
+
+Requirements:
+- Python 3.10+
+- Flet (pip install flet)
 
 ### uv
 
