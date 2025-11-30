@@ -19,7 +19,7 @@ class Config:
     # App Configuration
     APP_TITLE = "Weather App"
     APP_WIDTH = 400
-    APP_HEIGHT = 600
+    APP_HEIGHT = 850 # changed to fit report content
     
     # API Settings
     UNITS = "metric"  # metric, imperial, or standard
