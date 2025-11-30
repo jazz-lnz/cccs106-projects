@@ -32,6 +32,13 @@ Academic Year 2025-2026
 - `week4_labs/app_logic.py` - Modular logic handling
 - `week4_labs/LAB4_REPORT.md` - Lab 4 documentation
 
+### Module 6 Labs - Weather Application Enhancement
+- `mod6_labs/main.py` – Main Flet application with city search, current weather display, search history, 5‑day forecast, and theme toggle
+- `mod6_labs/weather_service.py` – Service layer handling OpenWeatherMap API calls (current weather + forecast)
+- `mod6_labs/config.py` – Configuration management (API key, app dimensions, base URL)
+- `mod6_labs/README.md` – Documentation with feature descriptions, usage instructions, and screenshots
+- `.env.example` – Example environment file for API key setup
+
 ### Module 1 Final Project
 - `module1_final/` - Final integrated project (TBD)
 
